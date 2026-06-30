@@ -510,7 +510,7 @@ export default function App() {
         </div>
 
         {/* Compact Filters Section directly under title */}
-        <div className="border-t border-slate-100 dark:border-slate-900/60 bg-slate-50/50 dark:bg-slate-950/40 backdrop-blur-xs">
+        <div className="border-t border-indigo-100 dark:border-indigo-900/50 bg-indigo-50/50 dark:bg-indigo-950/30 backdrop-blur-xs">
           <div className="max-w-7xl mx-auto px-4 py-3">
             <FilterControls
               filters={filters}
