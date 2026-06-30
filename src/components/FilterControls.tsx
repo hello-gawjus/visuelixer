@@ -52,18 +52,11 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
     onFilterChange({ ...filters, key: e.target.value });
   };
 
-  const handlePropertyHighlightChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    onFilterChange({ 
-      ...filters, 
-      highlightedProperty: e.target.value as TableFilters['highlightedProperty'] 
-    });
-  };
-
   return (
     <div className="flex flex-col gap-3">
       
       {/* Search & Filter inputs in a unified compact grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-8 gap-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-3">
         
         {/* Search bar - spans 2 columns for visibility */}
         <div className="flex flex-col gap-1 xl:col-span-2">
@@ -118,40 +111,6 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
                 {k.name}
               </option>
             ))}
-          </select>
-        </div>
-
-        {/* Highlight metrics */}
-        <div className="flex flex-col gap-1">
-          <label className="text-[9px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 flex items-center justify-between select-none">
-            <span className="flex items-center gap-1">
-              <Sparkles size={11} /> Display Metric
-            </span>
-            <Tooltip
-              content={
-                <div className="space-y-1.5">
-                  <div className="font-bold border-b border-slate-700/50 pb-0.5 text-indigo-400">Display Metric Highlights</div>
-                  <div className="text-[10px]"><span className="font-bold text-slate-200">Standard:</span> Shows elemental categories and atomic weight.</div>
-                  <div className="text-[10px]"><span className="font-bold text-slate-200">Electronegativity:</span> Colors elements by electron-drawing strength (Fluorine is highest).</div>
-                  <div className="text-[10px]"><span className="font-bold text-slate-200">Atomic Mass:</span> Highlights precise nuclear mass relative to hydrogen.</div>
-                  <div className="text-[10px]"><span className="font-bold text-slate-200">Melting/Boiling Points:</span> Visualizes high-heat phase shift thresholds in Kelvin.</div>
-                </div>
-              }
-              position="top"
-            >
-              <HelpCircle size={12} className="text-slate-400 hover:text-indigo-500 cursor-help transition-colors" />
-            </Tooltip>
-          </label>
-          <select
-            value={filters.highlightedProperty}
-            onChange={handlePropertyHighlightChange}
-            className="w-full h-[32px] py-1 px-2.5 text-xs bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-slate-700 dark:text-slate-300 font-semibold cursor-pointer"
-          >
-            <option value="none">Standard (Atomic Weight)</option>
-            <option value="electronegativity">Electronegativity (χ)</option>
-            <option value="atomicMass">Detailed Atomic Mass (u)</option>
-            <option value="meltingPoint">Melting Point (K)</option>
-            <option value="boilingPoint">Boiling Point (K)</option>
           </select>
         </div>
 

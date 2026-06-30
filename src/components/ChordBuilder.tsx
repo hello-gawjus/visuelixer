@@ -297,7 +297,7 @@ export const ChordBuilder: React.FC<ChordBuilderProps> = ({
       {/* Main Builder Area */}
       <div className="p-4 md:p-5 flex flex-col gap-5">
         {/* Active Elements Deck */}
-        <div className="flex flex-col gap-3">
+        <div id="selected-elements-section" className="flex flex-col gap-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
               <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500 flex items-center gap-1">

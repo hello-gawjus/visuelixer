@@ -15,7 +15,6 @@ const DEFAULT_FILTERS: TableFilters = {
   note: 'all',
   key: 'all',
   viewMode: 'grid',
-  highlightedProperty: 'none',
 };
 
 export default function App() {
@@ -431,6 +430,14 @@ export default function App() {
 
     setChordElements(matched);
     setIsChordMode(true);
+
+    // Smoothly scroll up to the Selected Elements section
+    setTimeout(() => {
+      const section = document.getElementById('selected-elements-section');
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 120);
   };
 
   const handleElementClick = (element: ChemicalElement) => {

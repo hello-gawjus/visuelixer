@@ -43,7 +43,6 @@ export interface TableFilters {
   note: string | 'all';
   key: string | 'all';
   viewMode: 'grid' | 'list' | 'groups';
-  highlightedProperty: 'none' | 'electronegativity' | 'atomicMass' | 'meltingPoint' | 'boilingPoint';
 }
 
 export interface SequenceNote {

@@ -23,7 +23,7 @@ export const PeriodicTable: React.FC<PeriodicTableProps> = ({
   chordElements = [],
   toneProperty = 'atomicMass',
 }) => {
-  const { searchQuery, category, note, key, highlightedProperty } = filters;
+  const { searchQuery, category, note, key } = filters;
 
   // Helper function to check if an element matches filters
   const matchesFilters = (element: ChemicalElement): boolean => {
@@ -77,7 +77,7 @@ export const PeriodicTable: React.FC<PeriodicTableProps> = ({
                 isHighlighted={isSel}
                 isInChord={isInChord}
                 isDimmed={!active}
-                propertyToDisplay={highlightedProperty}
+                propertyToDisplay={toneProperty}
                 toneProperty={toneProperty}
               />
             );

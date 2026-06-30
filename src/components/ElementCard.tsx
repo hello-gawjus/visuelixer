@@ -10,7 +10,7 @@ interface ElementCardProps {
   isHighlighted: boolean;
   isInChord?: boolean;
   isDimmed: boolean;
-  propertyToDisplay: 'none' | 'electronegativity' | 'atomicMass' | 'meltingPoint' | 'boilingPoint';
+  propertyToDisplay: ToneProperty;
   toneProperty?: ToneProperty;
 }
 
@@ -31,10 +31,12 @@ export const ElementCard: React.FC<ElementCardProps> = ({
         return element.electronegativity !== null ? `χ: ${element.electronegativity}` : 'χ: N/A';
       case 'atomicMass':
         return `${element.atomicMass.toFixed(2)}`;
-      case 'meltingPoint':
-        return element.meltingPoint !== null ? `${element.meltingPoint} K` : 'N/A';
-      case 'boilingPoint':
-        return element.boilingPoint !== null ? `${element.boilingPoint} K` : 'N/A';
+      case 'atomicNumber':
+        return `No. ${element.atomicNumber}`;
+      case 'density':
+        return element.density !== null ? `${element.density} g/cm³` : 'N/A';
+      case 'period':
+        return `Period ${element.period}`;
       default:
         return `${element.atomicMass.toFixed(2)}`;
     }
