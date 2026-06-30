@@ -1,0 +1,6 @@
+{
+  "name": "Periodic Table",
+  "description": "An interactive, beautiful, grid-based periodic table of elements with responsive layout, search, filter controls, and detailed insights for each element.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
