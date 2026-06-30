@@ -331,6 +331,14 @@ export default function App() {
     handleStopPlayback();
     setCurrentNotes([...seq.notes]);
     setCurrentTimeMs(0);
+
+    // Smoothly scroll to the sequence recorder timeline panel
+    setTimeout(() => {
+      const panel = document.getElementById('sequence-recorder-panel');
+      if (panel) {
+        panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 120);
   };
 
   const handleDeleteSequence = (id: string) => {
