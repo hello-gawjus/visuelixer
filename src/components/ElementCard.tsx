@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ChemicalElement, ToneProperty } from '../types';
 import { CATEGORY_COLORS, STATE_ICONS } from '../data/elements';
-import { getNoteNameForElement } from '../utils/audio';
+import { getNoteNameForElement, getShellDistribution } from '../utils/audio';
 
 interface ElementCardProps {
   element: ChemicalElement;
@@ -37,6 +37,8 @@ export const ElementCard: React.FC<ElementCardProps> = ({
         return element.density !== null ? `${element.density} g/cm³` : 'N/A';
       case 'period':
         return `Period ${element.period}`;
+      case 'electronShells':
+        return getShellDistribution(element.atomicNumber).join('-');
       default:
         return `${element.atomicMass.toFixed(2)}`;
     }

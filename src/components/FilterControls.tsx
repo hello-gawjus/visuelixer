@@ -129,6 +129,7 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
                   <div className="text-[10px]"><span className="font-bold text-slate-200">Electronegativity:</span> Highly reactive elements produce bright, high-frequency tones.</div>
                   <div className="text-[10px]"><span className="font-bold text-slate-200">Density:</span> High mass densities trigger extremely grounding physical resonant drones.</div>
                   <div className="text-[10px]"><span className="font-bold text-slate-200">Period:</span> Rows act as octaves; higher electron shells step down octaves automatically.</div>
+                  <div className="text-[10px]"><span className="font-bold text-slate-200">Shell Harmonics:</span> Maps pitch based on both shell count (fundamental) and valence electrons (harmonic micro-tuning).</div>
                 </div>
               }
               position="top"
@@ -147,6 +148,7 @@ export const FilterControls: React.FC<FilterControlsProps> = ({
             <option value="electronegativity">Electronegativity (High)</option>
             <option value="density">Density (Ground Drone)</option>
             <option value="period">Period (Shell Octaves)</option>
+            <option value="electronShells">Electron Shell Harmonics</option>
           </select>
         </div>
 

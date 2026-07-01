@@ -12,7 +12,7 @@ export type ElementCategory =
 
 export type PhysicalState = 'solid' | 'liquid' | 'gas' | 'synthetic';
 
-export type ToneProperty = 'atomicMass' | 'atomicNumber' | 'electronegativity' | 'density' | 'period';
+export type ToneProperty = 'atomicMass' | 'atomicNumber' | 'electronegativity' | 'density' | 'period' | 'electronShells';
 
 export type ShellsPlayOption = '1' | '2' | '3' | '4' | 'all' | 'outer';
 

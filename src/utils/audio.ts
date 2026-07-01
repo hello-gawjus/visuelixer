@@ -132,6 +132,23 @@ export function getFrequencyForElement(element: ChemicalElement, property: ToneP
       ratio = 1 - (clamped - minPeriod) / (maxPeriod - minPeriod);
       break;
     }
+    case 'electronShells': {
+      // Harmonic series based on the electron shell structure.
+      // Larger shell count (higher periods) = deeper resonance.
+      // Within each shell, more valence (outermost) electrons = higher harmonic resonance.
+      const shells = getShellDistribution(element.atomicNumber);
+      const shellCount = shells.length; // 1 to 7
+      const valenceElectrons = shells[shells.length - 1] || 1; // 1 to 8 (typically)
+      
+      const shellRatio = (shellCount - 1) / 6; // 0 to 1
+      const maxValence = Math.max(...shells, 8);
+      const valenceRatio = (valenceElectrons - 1) / (maxValence - 1 || 1); // 0 to 1
+      
+      // Let shell count be the main driver (lower pitch for heavier/larger shells)
+      // and valence electrons be the micro-tuning (higher pitch for more electrons)
+      ratio = 1 - (shellRatio * 0.8 + (1 - valenceRatio) * 0.2);
+      break;
+    }
     default:
       ratio = 0.5;
   }
